@@ -1,15 +1,9 @@
 package org.sample.quarkus;
 
-// import javax.persistence.Entity;
-// import javax.persistence.GeneratedValue;
-// import javax.persistence.Id;
 import javax.validation.constraints.Positive;
 
-// @Entity
 public class Data {
 
-    // @Id
-    // @GeneratedValue
     private Long id;
 
     @Positive
