@@ -15,5 +15,5 @@
         Runtime: java11
         CodeUri: target/quarkuslambda-1.0-SNAPSHOT-runner.jar
         MemorySize: 1024
-        Timeout: 30
+        Timeout: 60
         Policies: AWSLambdaBasicExecutionRole

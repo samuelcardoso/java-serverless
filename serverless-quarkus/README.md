@@ -16,5 +16,5 @@ normal create buckets: aws s3 mb s3://bucket-native-quarkus
 normal: sam.cmd deploy --template template.normal.yaml --stack-name normal-quarkus --s3-bucket bucket-normal-quarkus --capabilities CAPABILITY_AUTO_EXPAND CAPABILITY_IAM
 native: sam.cmd deploy --template template.native.yaml --stack-name native-quarkus --s3-bucket bucket-native-quarkus --capabilities CAPABILITY_AUTO_EXPAND CAPABILITY_IAM
 10) Run remote
-normal: aws lambda invoke --function-name "normal-quarkus-QuarkuslambdaFunction-XYZ" response.json
-native: aws lambda invoke --function-name "native-quarkus-QuarkuslambdaNativeFunction-XYZ" response.json
+normal: aws lambda invoke --function-name "normal-quarkus-QuarkuslambdaFunction-3CdgDFCByJNk" response.json
+native: aws lambda invoke --function-name "native-quarkus-QuarkuslambdaNativeFunction-OmIjqgKrNe9u" response.json
