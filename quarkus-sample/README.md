@@ -38,14 +38,13 @@
    normal create buckets: aws s3 mb s3://bucket-java-native-quarkus
 
 9. Deploy: lambda
-   normal: sam deploy --template target/sam.jvm.yaml --stack-name normal-quarkus --s3-bucket bucket-java-normal-quarkus --capabilities CAPABILITY_AUTO_EXPAND CAPABILITY_IAM
+   normal: (change runtime to java17) sam deploy --template target/sam.jvm.yaml --stack-name normal-quarkus --s3-bucket bucket-java-normal-quarkus --capabilities CAPABILITY_AUTO_EXPAND CAPABILITY_IAM
    native: (change runtime to provided.al2023) sam deploy --template target/sam.native.yaml --stack-name native-quarkus --s3-bucket bucket-java-native-quarkus --capabilities CAPABILITY_AUTO_EXPAND CAPABILITY_IAM
 
 GraalVM
 
 - <https://www.graalvm.org/downloads/>
 - export JAVA_HOME=/home/samuel/devel/tools/jvm/graalvm-jdk-17.0.10+11.1/
-- export JAVA_HOME=/home/samuel/devel/tools/jvm/graalvm-jdk-21.0.2+13.1/
 
 Build (ignore)
 
@@ -54,5 +53,5 @@ Build (ignore)
 
 Run remote
 
-- normal: aws lambda invoke --function-name "normal-quarkus-QuarkuslambdaFunction-3CdgDFCByJNk" response.json
-- native: aws lambda invoke --function-name "native-quarkus-QuarkuslambdaNativeFunction-OmIjqgKrNe9u" response.json
+- normal: curl --location 'https://ktu3yv63hd.execute-api.us-east-1.amazonaws.com/Prod/movies'
+- native: curl --location 'https://tbhldodcyl.execute-api.us-east-1.amazonaws.com/Prod/movies'
