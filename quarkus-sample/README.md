@@ -27,7 +27,14 @@
 
 6. Build
    normal: quarkus build
-   native: quarkus build --native -Dquarkus.native.container-build=true
+
+   native (local graalvm):
+   <https://www.graalvm.org/downloads/>
+   export JAVA_HOME=/home/samuel/devel/tools/jvm/graalvm-jdk-17.0.10+11.1/
+   quarkus build --native
+
+   native (docker graalvm):
+   quarkus build --native -Dquarkus.native.container-build=true
 
 7. Run Local SAM (if Windows: sam.cmd)
    normal: (change runtime to java17) sam local start-api --template target/sam.jvm.yaml
@@ -41,17 +48,7 @@
    normal: (change runtime to java17) sam deploy --template target/sam.jvm.yaml --stack-name normal-quarkus --s3-bucket bucket-java-normal-quarkus --capabilities CAPABILITY_AUTO_EXPAND CAPABILITY_IAM
    native: (change runtime to provided.al2023) sam deploy --template target/sam.native.yaml --stack-name native-quarkus --s3-bucket bucket-java-native-quarkus --capabilities CAPABILITY_AUTO_EXPAND CAPABILITY_IAM
 
-GraalVM
-
-- <https://www.graalvm.org/downloads/>
-- export JAVA_HOME=/home/samuel/devel/tools/jvm/graalvm-jdk-17.0.10+11.1/
-
-Build (ignore)
-
-- normal: mvn clean package
-- native: mvn clean package -Pnative -Dnative-image.docker-build=true
-
-Run remote
+10. Run remote
 
 - normal: curl --location 'https://ktu3yv63hd.execute-api.us-east-1.amazonaws.com/Prod/movies'
 - native: curl --location 'https://tbhldodcyl.execute-api.us-east-1.amazonaws.com/Prod/movies'
