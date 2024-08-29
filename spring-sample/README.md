@@ -1,6 +1,3 @@
-1. Start docker
-2. Build
-   normal: mvn clean install
-   native: mvn -Pnative spring-boot:build-image
-3. Extract binary
-   docker cp "<container_id>:/workspace/" "./"
+# Instructions
+
+0. Refer to <https://docs.spring.io/spring-native/docs/0.11.3/reference/htmlsingle/#samples>
